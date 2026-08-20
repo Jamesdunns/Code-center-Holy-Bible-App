@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holy Bible — English Scripture</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="cross">✝</div><div><b>Holy Bible</b><small>English Scripture</small></div></div>
+  <input id="search" placeholder="Search books..." type="search">
+  <div class="tabs"><button class="active" data-t="old">Old Testament</button><button data-t="new">New Testament</button></div>
+  <div id="books" class="books"></div>
+  <small class="footer">English Bible Reader</small>
+</aside>
+<main>
+<header><button class="menu" onclick="toggleSide()">☰</button><div><h1 id="title">Genesis</h1><p id="subtitle">Chapter 1</p></div><button onclick="toggleDark()">◐</button></header>
+<div class="toolbar"><button id="prev">← Previous</button><select id="chapters"></select><button id="next">Next →</button></div>
+<article><div class="heading"><small id="testament">OLD TESTAMENT</small><h2 id="readerTitle">Genesis 1</h2><p>English Scripture</p></div><div id="verses"></div>
+<div class="bottom"><button onclick="copyChapter()">Copy Chapter</button><button onclick="shareChapter()">Share</button></div></article>
+</main>
+<div class="player">
+  <div class="track"><b id="audioTitle">Genesis 1</b><small id="audioStatus">Browser speech/audio ready</small></div>
+  <button class="play" onclick="toggleAudio()" id="play">▶</button>
+  <input id="progress" type="range" min="0" max="100" value="0">
+  <span id="time">0:00</span><button onclick="stopAudio()">■</button>
+  <span>🔊</span><input id="volume" type="range" min="0" max="1" step=".01" value=".9">
+  <audio id="audio"></audio>
+</div>
+<div class="toast" id="toast"></div>
+<script src="bible-data.js"></script><script src="app.js"></script>
+</body></html>
